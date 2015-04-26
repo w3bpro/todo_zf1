@@ -1,0 +1,279 @@
+@import 'bootstrap.css';
+
+@import 'sweetalert.css';
+
+@import 'vegas.css';
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.block {
+  display: block;
+}
+.table {
+  display: table;
+}
+.clear {
+  clear: both;
+}
+.clearfix {
+  clear: both;
+  float: left;
+  width: 100%;
+}
+.clearfix.cfx10 {
+  margin-bottom: 10px;
+}
+.clearfix.cfx20 {
+  margin-bottom: 20px;
+}
+.clearfix.cfx30 {
+  margin-bottom: 30px;
+}
+.clearfix.cfx40 {
+  margin-bottom: 40px;
+}
+.clearfix.cfx50 {
+  margin-bottom: 50px;
+}
+.btn-center {
+  clear: both !important;
+  float: none !important;
+  margin: 0px auto !important;
+  display: table !important;
+}
+input.form-control.error,
+input[type=text].error,
+input[type=password].error,
+input[type=email].error,
+input[type=number].error,
+[type=text].form-control.error,
+[type=password].form-control.error,
+[type=email].form-control.error,
+[type=tel].form-control.error,
+[contenteditable].form-control.error {
+  border-color: #db0000;
+  color: #db0000;
+  -webkit-box-shadow: inset 0 -2px 0 #db0000;
+  box-shadow: inset 0 -2px 0 #db0000;
+}
+textarea:focus.error,
+textarea.form-control:focus.error,
+input.form-control:focus.error,
+input[type=text]:focus.error,
+input[type=password]:focus.error,
+input[type=email]:focus.error,
+input[type=number]:focus.error,
+[type=text].form-control:focus.error,
+[type=password].form-control:focus.error,
+[type=email].form-control:focus.error,
+[type=tel].form-control:focus.error,
+[contenteditable].form-control:focus.error {
+  -webkit-box-shadow: inset 0 -2px 0 #db0000;
+  box-shadow: inset 0 -2px 0 #db0000;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+header {
+  float: left;
+  clear: both;
+  display: block;
+  width: 100%;
+  padding: 10px 0px;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid #1b64a1;
+}
+header .container {
+  display: table;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+}
+header .container > img {
+  height: 30px;
+}
+header .container #nav {
+  list-style: none;
+  float: right;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 0px;
+}
+header .container #nav li {
+  float: left;
+  margin-left: 20px;
+}
+header .container #nav li a:not(.btn) {
+  height: 29px;
+  line-height: 29px;
+}
+section.content,
+section.app-content {
+  clear: both;
+  display: table;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+}
+.app-content {
+  padding-top: 0px;
+}
+body {
+  font-family: 'Open Sans', Verdana;
+}
+.landing h1 {
+  width: 100%;
+  max-width: 800px;
+  display: table;
+  text-align: center;
+  margin: 140px auto;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+}
+.landing .sign-in,
+.landing .log-in {
+  display: table;
+  margin: 20px auto;
+  width: 185px;
+}
+.registration-form {
+  width: 400px;
+  height: 200px;
+  border: 1px solid #1b64a1;
+  margin: 0 auto;
+  display: table;
+  margin-top: 40px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+.registration-form > form > span {
+  float: left;
+  clear: both;
+  color: #000;
+  font-size: 15px;
+  padding-bottom: 7px;
+}
+.registration-form > form > span label {
+  font-weight: 300;
+}
+.registration-form > form > input {
+  float: left;
+  clear: both;
+  margin-bottom: 15px;
+}
+#project-list {
+  float: left;
+  width: 30%;
+  max-width: 200px;
+  border-right: 1px solid #cbcbcb;
+  padding-right: 20px;
+  position: relative;
+}
+#project-list > h5 {
+  float: left;
+  clear: both;
+  width: 100%;
+  border-bottom: 0px solid #1b64a1;
+  padding-bottom: 5px;
+  line-height: 28px;
+}
+#project-list > div {
+  float: left;
+  clear: both;
+  width: 100%;
+  height: 85%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#project-list > div ul {
+  float: left;
+  clear: both;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+#project-list > div ul li {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 3px;
+  border-bottom: 1px solid #cbcbcb;
+}
+#project-list > div ul li a {
+  padding: 2px 0px;
+  cursor: pointer;
+}
+#project-list > div ul li a.active {
+  color: #ff9800;
+}
+#tasks-list {
+  float: left;
+  display: block;
+  width: 70%;
+  min-height: 100px;
+  padding: 0px 20px;
+}
+#tasks-list > .btn {
+  float: left;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+#tasks-list > h4 {
+  clear: both;
+  float: left;
+}
+#tasks-list ul {
+  float: left;
+  clear: both;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+#tasks-list ul li {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 3px;
+}
+#tasks-list ul li input[type="checkbox"] {
+  float: left;
+  width: auto;
+  margin-top: 0px;
+}
+#tasks-list ul li input[type="checkbox"]:after {
+  margin-top: 5px;
+}
+#tasks-list ul li > input[type="text"] {
+  float: left;
+  width: 70%;
+}
+#tasks-list ul li .btn {
+  float: left;
+  margin-left: 10px;
+  display: none;
+}
+#tasks-list ul li:hover .btn {
+  display: block;
+}
+#tasks-list ul li.done input[type="text"] {
+  text-decoration: line-through;
+  color: #AAA;
+}
+.add-task-form {
+  float: left;
+  clear: both;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  min-width: 200px;
+  max-width: 600px;
+  width: 70%;
+}

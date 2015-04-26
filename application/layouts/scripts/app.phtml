@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf8">
+  <meta http-equiv="Content-Type" content="text/html;">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="language" content="en">
+  <meta name="robots" content="index,follow,all">
+  <meta name="revisit-after" content="7-days">
+  <meta name="author" content="Sebastian Rak">
+  <meta name="GOOGLEBOT" content="NOODP">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?= $this->baseUrl('css/style.css');?>">
+  <script src="<?= $this->baseUrl('js/libs.js'); ?>" type="text/javascript" charset="utf-8"></script>
+  <script src="<?= $this->baseUrl('js/app.js'); ?>" type="text/javascript" charset="utf-8"></script>
+  <base href="<?= $this->baseUrl(); ?>/" />
+  <script type="text/javascript">
+  var baseUrl = '<?= $this->baseUrl(); ?>';
+  </script>
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<img src="img/logo.png" alt="ZFDO" />
+      <ul id="nav">
+        <li><a href="<?php echo $this->url(array(),'logout'); ?>" class="btn btn-default btn-sm">Log out</a></li>
+      </ul>
+		</div>
+	</header>
+    <section class="app-content">
+    <?php echo $this->layout()->content; ?>
+    </section>     
+    <footer>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+<section class="landing">
+    <h1>Make your list with TODO, best to do list on the world.</h1>
+    <a href="<?php echo $this->url(array(), 'sign-in'); ?>" class="btn btn-lg btn-danger sign-in">Sign up! It's free!</a>
+</section>
+
+<script type="text/javascript">
+    $(document).ready( function() {
+        $('body').vegas({
+            transition: 'slideRight2',
+            animationDuration: 5000,
+            timer: false,
+            slides: [
+                { src: baseUrl + '/img/bg.jpg' },
+                { src: baseUrl + '/img/bg2.jpg' }
+            ]
+        });
+    });
+</script>

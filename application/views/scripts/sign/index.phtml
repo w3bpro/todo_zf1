@@ -1,0 +1,79 @@
+<div class="registration-form">
+<?php
+    $this->form->setAction($this->url());
+    echo $this->form;
+?>
+</div>
+
+
+<script type="text/javascript">
+
+    $(document).ready( function() {
+        $('body').vegas({
+            transition: 'slideRight2',
+            animationDuration: 5000,
+            timer: false,
+            slides: [
+                { src: baseUrl + '/img/bg.jpg' },
+                { src: baseUrl + '/img/bg2.jpg' }
+            ]
+        });
+
+        $('#sign-in-btn').bind('click', function(e){
+            e.preventDefault ? e.preventDefault() : e.returnValue = false;        
+            var email = $('#sign-email').val();
+            var pass = $('#sign-pass').val();
+            var csrf = $('#sign-csrf').val();
+            var $btn = $(this);
+            var html = $btn.html();
+
+            if($btn.hasClass('disasbled')) {
+                return false;
+            }
+
+            $btn.addClass('disabled');
+
+            $.ajax({type:'POST', dataType: 'json', url: baseUrl + '/ajax/registration', data:{ email: email, pass: pass, csrf: csrf},
+                success: function(response){
+                    $btn.removeClass('disabled').empty().append(html);
+
+                    if(response.result == 'ok') {
+                        
+                    }
+                    else if(response.result == 'error') {
+                        var errors = {};
+                        for(var m in response.messages) {
+                            if(m == 'csrf') {
+                                swal("Registration Error", "Something went wrong, please try again.", "error");
+                                continue;
+                            }
+                            errors[m] = [];
+                            for(var t in response.messages[m]) {
+                                errors[m].push(response.messages[m][t]);
+                            }
+                        }
+                        for(var e in errors) {
+                            var msg = '';
+                            for(var m in errors[e]) {
+                                console.log(errors[e][m]);
+                                msg = msg + errors[e][m] + '<br/>';
+                            }
+
+                            $('#sign-' + e).tooltip({
+                                placement: 'right',
+                                html: true,
+                                trigger: 'focus',
+                                title: msg
+                            }).addClass('error');
+                        }
+                    }
+                },
+                beforeSend:function(){
+                    $btn.empty().append('<i class="fa fa-spinner fa-spin fa-lg"></i>');
+                }
+            });
+        });
+
+    });
+
+</script>

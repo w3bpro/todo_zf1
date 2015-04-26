@@ -1,0 +1,51 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+header {
+	.left;
+	.clear;
+	.block;
+	width: 100%;
+	padding: 10px 0px;
+	background: rgba(255, 255, 255, 0.8);
+	border-bottom: 1px solid @borderColor;
+	.container {
+		.table;
+		width: 100%;
+		max-width: 1200px;
+		margin: 0px auto;
+		> img {
+			height: 30px;
+		}
+		#nav {
+			list-style: none;
+			.right;
+			.block;
+			margin-top: 7px;
+			margin-bottom: 0px;
+			li {
+				.left;
+				margin-left: 20px;
+				a:not(.btn) {
+					height: 29px;
+					line-height: 29px;
+				}
+			}
+		}
+	}
+
+}
+
+section.content, section.app-content {
+	.clear;
+	.table;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0px auto;
+}
+
+.app-content {
+	padding-top: 0px;
+}

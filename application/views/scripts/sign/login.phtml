@@ -1,0 +1,55 @@
+<div class="registration-form">
+<?php
+    $this->form->setAction($this->url());
+    echo $this->form;
+?>
+</div>
+
+
+<script type="text/javascript">
+
+    $(document).ready( function() {
+        $('body').vegas({
+            transition: 'slideRight2',
+            animationDuration: 5000,
+            timer: false,
+            slides: [
+                { src: baseUrl + '/img/bg.jpg' },
+                { src: baseUrl + '/img/bg2.jpg' }
+            ]
+        });
+
+        $('#log-in-btn').bind('click', function(e){
+            e.preventDefault ? e.preventDefault() : e.returnValue = false;        
+            var email = $('#login-email').val();
+            var pass = $('#login-pass').val();
+            var csrf = $('#login-csrf').val();
+            var $btn = $(this);
+            var html = $btn.html();
+
+            if($btn.hasClass('disabled')) {
+                return false;
+            }
+
+            $btn.addClass('disabled');
+
+            $.ajax({type:'POST', dataType: 'json', url: baseUrl + '/ajax/login', data:{ email: email, pass: pass, csrf: csrf},
+                success: function(response){
+                    $btn.removeClass('disabled').empty().append(html);
+
+                    if(response.result == 'ok') {
+                        window.location.href = baseUrl + '/home/';
+                    }
+                    else if(response.result == 'error') {
+                        swal("Log in error", "Check your e-mail and password and try again.", "error");
+                    }
+                },
+                beforeSend:function(){
+                    $btn.empty().append('<i class="fa fa-spinner fa-spin fa-lg"></i>');
+                }
+            });
+        });
+
+    });
+
+</script>
